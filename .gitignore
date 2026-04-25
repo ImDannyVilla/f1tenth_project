@@ -1,0 +1,9 @@
+build/
+install/
+log/
+.venv/
+.idea/
+__pycache__/
+*.pyc
+compile_commands.json
+src/f1tenth_gym_ros/
