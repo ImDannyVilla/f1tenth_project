@@ -1,9 +1,38 @@
+#ROS2 /colcon build artifacts (architectrue soecific, never commit these)
 build/
 install/
 log/
+
+#compilation db, this is machine specific
+compile_commands.json
+
+#virtual envs
 .venv/
-.idea/
+venv/
+
+#python
 __pycache__/
 *.pyc
-compile_commands.json
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+#IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+#Editor backups
+*~
+
+#local secrets (just in case)
+*.local
+.env
+
+#dont need 3rd party sim for jetson
 src/f1tenth_gym_ros/
