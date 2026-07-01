@@ -57,6 +57,8 @@ public:
     }
 
 private:
+    //atomic for speed_ so that the read and write happens all-at-once, so neither callback(thread) ever sees
+    //it  partially done.
     std::atomic<double> speed_ = 0.0;
     /// TODO: create ROS subscribers and publishers
 
