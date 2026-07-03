@@ -1,0 +1,38 @@
+package,dependency,in_foxy_repo,in_giu_repo,apt_available_humble,notes
+f1tenth_stack,ackermann_msgs,yes,yes,yes,ros-humble-ackermann-msgs; already installed on desktop
+f1tenth_stack,urg_node,yes,yes,yes,ros-humble-urg-node exists; NOT foxy-only. GIU declares it but launch actually uses urg_node2 (stale manifest)
+f1tenth_stack,urg_node2,no,launch-only,no,Required by GIU bringup_launch.py but undeclared in package.xml; no apt pkg or rosdep rule for Humble; source: github.com/Hokuyo-aut/urg_node2
+f1tenth_stack,joy,yes,yes,yes,ros-humble-joy
+f1tenth_stack,joy_teleop,yes,yes,yes,ros-humble-joy-teleop (part of teleop_tools); makes teleop_tools submodule unnecessary
+f1tenth_stack,rosbridge_server,yes,yes,yes,ros-humble-rosbridge-server
+f1tenth_stack,vesc,yes,yes,no,No apt pkg / no rosdep rule; build from submodule. Foxy repo pins foxy-branch 1952e79 (2021-08); GIU pins humble-branch head 1bc8251 (2025-02) — use the humble pin
+f1tenth_stack,ackermann_mux,yes,yes,no,No apt pkg / no rosdep rule; no humble branch upstream; build foxy-devel head b3c0b08 from source
+f1tenth_stack,std_msgs,yes,yes,yes,ros-humble-std-msgs; already installed on desktop
+f1tenth_stack,teleop_tools,submodule,submodule,yes,ros-humble-teleop-tools; both repos pin foxy-devel submodule; upstream humble-devel 163827a exists but is unused; prefer apt
+f1tenth_stack,nav2_map_server,no,launch-only,yes,GIU launch only; undeclared
+f1tenth_stack,nav2_amcl,no,launch-only,yes,GIU launch only; undeclared
+f1tenth_stack,nav2_lifecycle_manager,no,launch-only,yes,GIU launch only; undeclared
+f1tenth_stack,robot_localization,no,launch-only,yes,GIU launch only; undeclared; launched unconditionally
+f1tenth_stack,tf2_ros,launch-only,launch-only,yes,static_transform_publisher; pulled in by ros-humble-ros-base anyway
+f1tenth_stack,pure_pursuit,no,launch-only,no,GIU private package; not in repo or any public index
+f1tenth_stack,trajectory_planning,no,launch-only,no,GIU private package; launched unconditionally (csv_path_pub)
+f1tenth_stack,gap_follower,no,launch-only,no,GIU private package; conditional
+f1tenth_stack,trailing_controller,no,launch-only,no,GIU private package; launched unconditionally
+f1tenth_stack,control_gateway,no,launch-only,no,GIU private package; launched unconditionally (2 nodes)
+f1tenth_stack,decision,no,launch-only,no,GIU private package; fsm/state_visualizer/opp_tracker launched unconditionally
+f1tenth_stack,obj_detection,no,launch-only,no,GIU private package; launched unconditionally
+f1tenth_stack,horizon_mapper,no,launch-only,no,GIU private package; conditional
+f1tenth_stack,overtaking,no,launch-only,no,GIU private package; conditional (dwa)
+f1tenth_stack,kayn_controller,no,launch-only,no,GIU private package; conditional
+f1tenth_stack,lqr_controller,no,launch-only,no,GIU private package; conditional
+f1tenth_stack,state_publisher,no,launch-only,no,GIU private package; launched unconditionally
+f1tenth_stack,MPC_karim,no,launch-only,no,GIU private package; conditional
+f1tenth_stack,lidar_filter,no,launch-only,no,GIU private package; launched unconditionally
+f1tenth_stack,overtaking_spline,no,launch-only,no,GIU private package; launched unconditionally
+f1tenth_stack,mcl_particle_filter,no,launch-only,no,GIU private package; bringup_launch_test.py only
+f1tenth_stack,artemis_imu_ros2,no,launch-only,no,GIU private package; bringup_launch_test.py only
+joystick_converter,rclpy,n/a,undeclared,yes,Package declares zero runtime deps; nodes import rclpy/sensor_msgs etc. — manifest incomplete
+f1tenth_stack,ament_copyright,test,test,yes,test_depend only
+f1tenth_stack,ament_flake8,test,test,yes,test_depend only
+f1tenth_stack,ament_pep257,test,test,yes,test_depend only
+f1tenth_stack,python3-pytest,test,test,yes,test_depend only

@@ -126,7 +126,6 @@ private:
     rclcpp::Publisher<ackermann_msgs::msg::AckermannDriveStamped>::SharedPtr publisher_;
 
 
-
 };
 int main(int argc, char ** argv) {
     rclcpp::init(argc, argv);
