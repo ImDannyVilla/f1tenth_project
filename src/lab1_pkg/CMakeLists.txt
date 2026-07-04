@@ -30,11 +30,6 @@ install(TARGETS
         DESTINATION lib/${PROJECT_NAME}
 )
 
-# 4. Install the Python Scripts (For later)
-install(DIRECTORY
-        scripts
-        DESTINATION lib/${PROJECT_NAME}
-)
 
 install(DIRECTORY
         launch

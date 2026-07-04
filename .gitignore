@@ -35,4 +35,28 @@ Thumbs.db
 .env
 
 #dont need 3rd party sim for jetson
+# Third-party code (cloned separately per machine)
+src/f1tenth_system/
 src/f1tenth_gym_ros/
+
+# Build artifacts
+build/
+install/
+log/
+
+# CLion / IDE
+.idea/
+.vscode/
+compile_commands.json
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# OS
+.DS_Store
+
+# Editor backups
+*~
+*.swp
